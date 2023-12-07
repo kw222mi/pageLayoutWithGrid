@@ -1,0 +1,40 @@
+html, body {
+
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 15em auto 15em;
+    grid-template-rows: min-content auto min-content;
+}
+
+header {
+    border: solid;
+    background-color: darkgray;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+nav {
+    border: solid;
+    background-color: antiquewhite;
+}
+
+section {
+    border: solid;
+    background-color: cadetblue;
+}
+
+aside {
+    border: solid;
+    background-color: antiquewhite;
+
+}
+
+footer { 
+    border: solid;
+    background-color: darkgray;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
