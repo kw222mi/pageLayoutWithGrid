@@ -5,36 +5,65 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: 15em auto 15em;
-    grid-template-rows: min-content auto min-content;
+    grid: auto-flow min-content /1fr;
+    grid-template-areas: "header"
+                         "nav"
+                        "aside"
+                         "main"
+                         "footer";
+    margin: 1em;
+    grid-gap: 1em;   
 }
 
+@media screen and (min-width: 500px) {
+    body {
+        grid: auto-flow min-content / 1fr 2fr;
+        grid-template-areas: "header header"
+                            "nav main "
+                            "aside main"
+                            "footer footer";
+    }
+}
+
+@media screen and (min-width: 650px) {
+    body {
+            grid: auto-flow min-content / 1fr 2fr 1fr;
+            grid-template-areas: "header header header"
+                                "nav main aside"
+                                "footer footer footer";
+        }
+}
 header {
     border: solid;
     background-color: darkgray;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-area: header;
 }
 
 nav {
     border: solid;
     background-color: antiquewhite;
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
 }
 
 section {
     border: solid;
     background-color: cadetblue;
+    
 }
 
 aside {
     border: solid;
     background-color: antiquewhite;
+    grid-area: aside;
 
 }
 
 footer { 
     border: solid;
     background-color: darkgray;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-area: footer;
 }
